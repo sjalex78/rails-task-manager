@@ -1,8 +1,12 @@
-<h1>My Tasks</h1>
+<h1 class="display-2">My Tasks</h1>
 
-  <ul>
+  <dl class ="row">
     <% @tasks.each do |task| %>
-      <li><%= link_to task.title, task_path(task)%></li>
+      <dt class="col-sm-3"><%= link_to task.title, task_path(task) %></dt>
+      <dd class="col-sm-9"><%= task.detail %></dd>
     <% end %>
-  </ul>
-<%= link_to "New Task", new_task_path %>
+  </dl>
+<div class="bd-example p-20">
+  <p class="icon-link"><%= link_to "New Task", new_task_path %>
+  </p>
+</div>
